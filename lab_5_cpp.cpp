@@ -15,7 +15,7 @@ void user_interface(int rows, int columns);
 int main()
 {
 	setlocale(LC_ALL, "ru");
-	user_interface(4,9);
+	user_interface(4, 9);
 }
 
 
@@ -42,7 +42,7 @@ int** init_matrix(int rows, int columns) {
 	for (int i = 0; i < rows; i++) {
 		matrix[i] = new int[columns];
 		for (int j = 0; j < columns; j++) {
-			std::cout << "Введите желаемое значение для "<< i+1 << "-> строчки и "<< j+1 << "-> столбца: ";
+			std::cout << "Введите желаемое значение для " << i + 1 << "-> строчки и " << j + 1 << "-> столбца: ";
 			matrix[i][j] = input_matrix();
 		}
 	}
