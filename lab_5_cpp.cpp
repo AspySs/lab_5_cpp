@@ -10,24 +10,22 @@ int input_int(std::string out);
 int input_answer();
 int input_matrix();
 void counting(int** matrix, int rows, int columns);
-void user_interface();
+void user_interface(int rows, int columns);
 
 int main()
 {
 	setlocale(LC_ALL, "ru");
-	user_interface();
+	user_interface(4,9);
 }
 
 
-void user_interface() {
-	int rows = 4;
-	int columns = 9;
+void user_interface(int rows, int columns) {
 	std::cout << "Хотите ввести массив вручную или же использовать автоматическое заполнение? " << std::endl;
 	std::cout << "Вручную(0)" << std::endl;
 	std::cout << "Автоматически(1)" << std::endl;
 	if (input_answer() == 0) {
-		int rows = input_int("количество строк: ");
-		int columns = input_int("количество столбцов: ");
+		rows = input_int("количество строк: ");
+		columns = input_int("количество столбцов: ");
 		int** matrix = init_matrix(rows, columns);
 		print_matrix(matrix, rows, columns);
 		counting(matrix, rows, columns);
